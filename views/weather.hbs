@@ -70,7 +70,23 @@
                     <div class="tempInformation">
                         <div class="top_layer">
                             <p id="day">Thursday</p>
-                            <p id="today_date">12 AUG</p>
+                            <p id="today_date"></p>
+                            <script>
+                                 var today = new Date();
+ 
+                                 var day = today.getDay();
+                                 var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+                                 var monthList= ["Jan","feb","mar","april","may","june","july","aug","sept","oct","nov","dec"]
+                                 // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); 
+                                 var date= today.getDate() +" " + monthList[today.getMonth()] + " " +today.getFullYear();
+                                 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                                var dateTime = date+' '+time;
+
+
+                             document.getElementById("today_date").innerHTML = date ;
+                             document.getElementById("day").innerHTML = daylist[day] ;
+
+                            </script>
                         </div>
                         <div class="main_layer">
                             <p id="city_name">Get the Output here</p>
@@ -88,7 +104,7 @@
 
     <footer>
         <p>
-            Created with Preeti Satsangi
+            Created by Preeti Satsangi
         </p>
     </footer>
 
